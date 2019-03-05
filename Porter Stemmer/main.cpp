@@ -146,7 +146,7 @@ void step1a(){
 
 	if(stemEndsWith("sses", 4))	replace("ss", 4);
 	else if(stemEndsWith("ies", 3))	replace("i", 3);
-	else if(stemEndsWith("s", 1))	replace("", 1);			//faulty
+	else if(stemEndsWith("s", 1))	replace("", 1);			
 
 	j = strlen(b);
 	b[j+1] ='\0';
