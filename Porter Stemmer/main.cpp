@@ -215,13 +215,13 @@ void step2(){
 		
 		if(stemEndsWith("ational", 7))		replace("ate", 7);
 		if(stemEndsWith("tional", 6))		replace("tion", 6);
-		if(stemEndsWith("enci", 4))			replace("ence", 4);
-		if(stemEndsWith("anci", 4))			replace("ance", 4);
-		if(stemEndsWith("izer", 4))			replace("ize", 4);
-		if(stemEndsWith("abli", 4))			replace("able", 4);
-		if(stemEndsWith("alli", 4))			replace("al", 4);
+		if(stemEndsWith("enci", 4))		replace("ence", 4);
+		if(stemEndsWith("anci", 4))		replace("ance", 4);
+		if(stemEndsWith("izer", 4))		replace("ize", 4);
+		if(stemEndsWith("abli", 4))		replace("able", 4);
+		if(stemEndsWith("alli", 4))		replace("al", 4);
 		if(stemEndsWith("entli", 5))		replace("ent", 5);
-		if(stemEndsWith("eli", 3))			replace("e", 3);
+		if(stemEndsWith("eli", 3))		replace("e", 3);
 		if(stemEndsWith("ousli", 5))		replace("ous", 5);
 		if(stemEndsWith("ization", 7))		replace("ize", 7);
 		if(stemEndsWith("ation", 5))		replace("ate", 5);
@@ -248,9 +248,9 @@ void step3(){
 		if(stemEndsWith("ative", 5))		replace("", 5);
 		if(stemEndsWith("alize", 5))		replace("al", 5);
 		if(stemEndsWith("iciti", 5))		replace("ic", 5);
-		if(stemEndsWith("ical", 4))			replace("ic", 4);
-		if(stemEndsWith("ful", 3))			replace("", 3);
-		if(stemEndsWith("ness", 4))			replace("", 3);
+		if(stemEndsWith("ical", 4))		replace("ic", 4);
+		if(stemEndsWith("ful", 3))		replace("", 3);
+		if(stemEndsWith("ness", 4))		replace("", 3);
 	}
 	
 	j = strlen(b);
@@ -272,7 +272,7 @@ void step4(){
 		if(stemEndsWith("able", 4))			replace("", 4);
 		if(stemEndsWith("ible", 4))			replace("", 4);
 		if(stemEndsWith("ant", 3))			replace("", 3);
-		if(stemEndsWith("ement", 5))		replace("", 5);
+		if(stemEndsWith("ement", 5))			replace("", 5);
 		if(stemEndsWith("ment", 4))			replace("", 4);
 		if(stemEndsWith("ent", 3))			replace('\0', 3);
 		
