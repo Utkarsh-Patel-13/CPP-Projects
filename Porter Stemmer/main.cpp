@@ -308,7 +308,7 @@ void step5a(){
 	j--;
 }
 
-void step5b(){								//wrong logic
+void step5b(){
 
 	if(m()>1 && doubl()==1 && b[j]=='l'){
 		b[j] = '\0';
@@ -341,14 +341,14 @@ void stem(){
 
  	if(m()>1)
 	step5b();						//working but undesired output
-//	cout<<b<<m()<<endl;
+
 
 }
 
 
 int main(){
 
-	ifstream fin("word.txt");
+	ifstream fin("file2.txt");
 	ofstream fout("new_word.txt");
 
 
@@ -361,8 +361,8 @@ int main(){
 			fout<<b<<" ";
 		}
 	}
-
 /*
+
 	cin>>b;
 	j=strlen(b)-1;
 
@@ -370,6 +370,7 @@ int main(){
 
 
 	cout<<b<<endl;
-*/
+    getchar();
+    */
 	return 0;
 }
