@@ -58,6 +58,7 @@ int Stem::isCons(int i){					// Will return TRUE is the letter b[i] is consonant
 					else{
 						return (!isCons(i-1));
 					}
+		default : return TRUE;	
 	}
 }
 
