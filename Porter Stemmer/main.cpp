@@ -7,10 +7,9 @@ using namespace std;
 #define FALSE 0
 #define TRUE 1
 
-char b[50];							// b stores the word to be stemmend
+char b[50];							// b stores the word to be stemmed
 
-int k0 = 0;							// k0 represent zeroth element of b
-int j;								// j represents last elemnt of b
+int j;								// j represents last element of b
 
 
 int search();
@@ -25,7 +24,7 @@ int isCons(int i){					// Will return TRUE is the letter b[i] is consonant other
 		case 'o':
 		case 'u': return FALSE;
 		case 'y':
-					if(i==k0){
+					if(i==0){
 						return TRUE;
 					}
 					else{
@@ -38,14 +37,14 @@ int isCons(int i){					// Will return TRUE is the letter b[i] is consonant other
 
 int m()								// To calculate m where m is : <C>(VC)^m<V>, where C: string of consonants V: string of vowels
 {
-	int i=k0;
+	int i=0;
 	int m_ = 0;
 
   while(TRUE){
 
 	if(i>j) return m_;  			//for 1 letter words
 
-	if(!isCons(i))      			//loop to skip V ie skip first vowel string if the word starts from vowel
+	if(!isCons(i))      			//loop to skip V i.e. skip first vowel string if the word starts from vowel
 		break;
 
 	i++;
@@ -78,7 +77,7 @@ int m()								// To calculate m where m is : <C>(VC)^m<V>, where C: string of c
 
 
 int vowelInStem(){					// Returns TRUE if the word has a vowel before the part which is to be stemmed
-	for(int i=k0 ; i<j ; i++){
+	for(int i=0 ; i<j ; i++){
 		if(!isCons(i)) return TRUE;
 	}
 	return FALSE;
@@ -106,7 +105,7 @@ int cvc(int i)						// Checks for 'cvc' in the string. This is to add e in small
 }
 
 
-int stemEndsWith(char *str, int end_len){		// Cheks if the word(b) ends with string "str"
+int stemEndsWith(char *str, int end_len){		// Checks if the word(b) ends with string "str"
 
 	int slen = strlen(b);
 
@@ -159,7 +158,7 @@ void step1a(){
 void step1b(){
 
 	if(m()>0 && stemEndsWith("eed", 3))	replace("ee", 3);
-																	
+
 	else if(vowelInStem() && stemEndsWith("ed", 2)){
 		replace("", 2);
 
@@ -216,8 +215,8 @@ void step2(){
 	if(m()>0){
 
 		if(stemEndsWith("ational", 7))			replace("ate", 7);
-		else if(stemEndsWith("tional", 6))	replace("tion", 6);
-		else if(stemEndsWith("enci", 4))	  replace("ence", 4);
+		else if(stemEndsWith("tional", 6))	    replace("tion", 6);
+		else if(stemEndsWith("enci", 4))	    replace("ence", 4);
 		else if(stemEndsWith("anci", 4))		replace("ance", 4);
 		else if(stemEndsWith("izer", 4))		replace("ize", 4);
 		else if(stemEndsWith("abli", 4))		replace("able", 4);
@@ -225,15 +224,15 @@ void step2(){
 		else if(stemEndsWith("entli", 5))		replace("ent", 5);
 		else if(stemEndsWith("eli", 3))			replace("e", 3);
 		else if(stemEndsWith("ousli", 5))		replace("ous", 5);
-		else if(stemEndsWith("ization", 7))	replace("ize", 7);
+		else if(stemEndsWith("ization", 7))	    replace("ize", 7);
 		else if(stemEndsWith("ation", 5))		replace("ate", 5);
 		else if(stemEndsWith("alism", 5))		replace("al", 5);
-		else if(stemEndsWith("iveness", 7))	replace("ive", 7);
-		else if(stemEndsWith("fulness", 7))	replace("ent", 7);
-		else if(stemEndsWith("ousness", 7))	replace("ous", 7);
+		else if(stemEndsWith("iveness", 7))	    replace("ive", 7);
+		else if(stemEndsWith("fulness", 7))	    replace("ent", 7);
+		else if(stemEndsWith("ousness", 7))	    replace("ous", 7);
 		else if(stemEndsWith("aliti", 5))		replace("al", 5);
 		else if(stemEndsWith("iviti", 5))		replace("ive", 5);
-		else if(stemEndsWith("biliti", 6))	replace("ble", 6);
+		else if(stemEndsWith("biliti", 6))	    replace("ble", 6);
 	}
 
 	j = strlen(b);
@@ -326,10 +325,10 @@ void step5b(){
 void stem(){
 
 	char temp[20];
-	
+
 	strcpy(temp, b);
 	int i;
-	
+
 	step1a();
 	step1b();
 	step1c();
@@ -340,10 +339,10 @@ void stem(){
 	step3();
 
 	step4();
-	
+
 	step5a();
 
-	step5b();					
+	step5b();
 
 
 }
@@ -359,7 +358,7 @@ int main(){
 
 	cout<<b<<endl;
     getchar();
-    
+
 	return 0;
 }
 
